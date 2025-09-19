@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Apix</title>
-  <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره Apix</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <nav class="nav container">
-      <div class="brand"><img src="assets/logo.svg" alt=""><span class="name">Apix</span></div>
-      <div class="nav-links">
-        <a href="index.html">خانه</a><a href="portfolio.html">نمونه‌کار</a><a href="services.html">خدمات</a>
-        <a class="active" href="about.html">درباره</a><a href="brand-book.html">برندبوک</a><a href="contact.html">ارتباط</a>
-        <button class="theme-toggle" data-theme-toggle>تم</button>
-      </div>
-      <button class="menu-toggle" data-menu-toggle>منو</button>
-    </nav>
-    <div class="mobile-drawer container glass" data-mobile-drawer>
-      <a href="index.html">خانه</a><a href="portfolio.html">نمونه‌کار</a><a href="services.html">خدمات</a><a href="about.html">درباره</a><a href="brand-book.html">برندبوک</a><a href="contact.html">ارتباط</a>
-      <button class="theme-toggle" data-theme-toggle>تغییر تم</button>
+
+    <div class="background-blobs">
+        <div class="blob one"></div>
+        <div class="blob two"></div>
     </div>
-  </header>
 
-  <main class="container section">
-    <div class="glass card reveal">
-  <h1 class="heading">درباره Apix</h1>
-  <p class="muted">
-    Apix ترکیب علی و پیکسل است: توجه وسواس‌گونه به جزئیات، سادگی هدفمند، و طراحی‌هایی که
-    برای انسان‌ها کار می‌کنند. هویت ایرانی در زیرلایه‌های ظریفِ هندسی و تایپی نفس می‌کشد.
-  </p>
-  <div class="hr"></div>
-  <h2 class="heading">سازنده</h2>
-  <p class="muted">
-    من <strong>علی ترکمن</strong> هستم، ۱۸ ساله از قم، ایران.  
-    بیش از ۵ سال تجربه در طراحی گرافیک، ۳ سال کدنویسی، ۱ سال موسیقی‌سازی و ۱ سال والیبال دارم.  
-    علاقه‌مند به روانشناسی و جامعه‌شناسی، و همیشه در جستجوی ترکیب هنر، تکنولوژی و درک رفتار انسان‌ها برای خلق تجربه‌های ماندگار.
-  </p>
-</div>
+    <header class="glassmorphic">
+        <div class="logo">
+            <h1>Apix</h1>
+        </div>
+        <nav>
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="index.html#services">خدمات</a></li>
+                <li><a href="index.html#portfolio">نمونه‌کارها</a></li>
+                <li><a href="index.html#contact">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  </main>
+    <main>
+        <section id="about-page" class="glassmorphic-section about-page-content">
+            <h2 class="animate-on-scroll">درباره Apix</h2>
+            <div class="about-container">
+                <div class="about-text animate-on-scroll">
+                    <p>Apix یک برند طراحی گرافیک با تمرکز بر نوآوری و مینیمالیسم است. این برند توسط **علی ترکمن**، طراح و بنیانگذار، با این باور که طراحی قدرتمند می‌تواند داستان یک برند را به زیباترین شکل روایت کند، شکل گرفت.</p>
+                    <p>رویکرد ما در Apix، ترکیبی از دقت، هنر و فناوری است. ما با درک عمیق از نیازهای هر مشتری، راه‌حل‌های بصری منحصر به فردی خلق می‌کنیم که نه تنها زیبا هستند، بلکه تأثیرگذار و ماندگار نیز می‌باشند.</p>
+                    <p>هر پروژه در Apix با تعهد کامل و توجه به جزئیات انجام می‌شود. ما به دنبال خلق آثاری هستیم که مرزهای طراحی را جابجا کنند و به برند شما هویتی تازه و متمایز ببخشند.</p>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <img src="https://placehold.co/400x400/F0F2F5/1C1C1E?text=Ali+Torkaman" alt="Ali Torkaman">
+                    <h3>علی ترکمن - طراح و بنیانگذار</h3>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <footer class="footer container"><div>© Apix</div><div class="muted">About</div></footer>
-  <script src="assets/app.js"></script>
+    <footer>
+        <p>© 2025 Apix. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
 </body>
 </html>
