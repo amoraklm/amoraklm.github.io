@@ -5,6 +5,7 @@
     --background-color: #f8f9fa;
     --glass-background: rgba(255, 255, 255, 0.2);
     --glass-border: rgba(255, 255, 255, 0.3);
+    --mobile-menu-background: rgba(0, 0, 0, 0.7); /* Darker for contrast */
 }
 
 body {
@@ -284,7 +285,7 @@ footer {
         top: 100%;
         left: 0;
         text-align: center;
-        background: var(--glass-background);
+        background: var(--mobile-menu-background); /* Improved contrast */
         backdrop-filter: blur(10px);
         border-radius: 10px;
         margin-top: 1rem;
@@ -298,7 +299,11 @@ footer {
 
     nav li {
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    nav li a {
+        color: var(--secondary-color); /* Light color for better visibility */
     }
 
     .menu-icon {
