@@ -1,6 +1,7 @@
-/* Apix Design System — Glassmorphism, Dark/Light, Motion-aware, RTL-ready
+/* =========================
+   Apix Design System — Glassmorphism, Dark/Light, Motion-aware, RTL-ready
    Author: Ali Torkaman (Apix)
-*/
+========================= */
 
 /* 1) Design tokens */
 :root {
@@ -53,16 +54,12 @@ body {
   font-family: Inter, IRANSansX, Vazirmatn, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   line-height: 1.6;
-  /* Minimal, banded gradient to avoid blotches and keep glass clean */
   background: linear-gradient(135deg, var(--bg-dark-1), var(--bg-dark-2));
   min-height: 100dvh;
 }
 :root.theme-light body {
   background: linear-gradient(135deg, var(--bg-light-1), var(--bg-light-2));
 }
-
-/* Optional RTL (already using dir="rtl" in HTML) */
-/* body[dir="rtl"] { direction: rtl; } */
 
 a { color: var(--cyan); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -121,7 +118,7 @@ a:hover { text-decoration: underline; }
 }
 .theme-toggle.rotate .icon { transform: rotate(360deg); }
 
-/* 4) Mobile drawer (readability guaranteed) */
+/* 4) Mobile drawer */
 .menu-toggle { display: none; }
 
 @media (max-width: 860px) {
@@ -133,14 +130,12 @@ a:hover { text-decoration: underline; }
     top: 64px; right: 12px; left: 12px;
     border-radius: 16px;
     border: 1px solid var(--border);
-    backdrop-filter: blur(28px);            /* stronger blur for separation */
+    backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
     box-shadow: var(--shadow);
     padding: 12px;
     display: none;
     z-index: 1100;
-
-    /* HIGH opacity to avoid text blending with background */
     background: rgba(15, 23, 42, 0.94);
   }
   :root.theme-light .mobile-drawer {
@@ -157,23 +152,7 @@ a:hover { text-decoration: underline; }
   .mobile-drawer.open { display: block; }
 }
 
-/* 5) Hero & sections */
-.hero { padding: 72px 24px 48px; }
-.hero-inner {
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--gap); align-items: center;
-}
-@media (max-width: 1024px) { .hero-inner { gap: 20px; } }
-@media (max-width: 860px)  { .hero-inner { grid-template-columns: 1fr; } }
-
-.section { padding: 32px 24px; }
-
-.title {
-  font-size: clamp(28px, 5vw, 48px);
-  line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.5px;
-}
-.subtitle { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); margin: 0 0 16px; }
-
-/* 6) Glass surfaces & cards */
+/* 5) Glass surfaces & cards */
 .glass {
   background: linear-gradient(to bottom right, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   border: 1px solid var(--border);
@@ -185,7 +164,7 @@ a:hover { text-decoration: underline; }
 .card { padding: 24px; border-radius: var(--radius); }
 .card + .card { margin-top: 16px; }
 
-/* 7) Buttons */
+/* 6) Buttons */
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 10px 16px; border-radius: 12px;
@@ -200,16 +179,14 @@ a:hover { text-decoration: underline; }
   border-color: var(--border);
 }
 
-/* 8) Grids */
+/* 7) Grids */
 .grid { display: grid; gap: var(--gap); }
 .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 1024px) { .grid.cols-3 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px)  {
-  .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
-}
+@media (max-width: 640px)  { .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; } }
 
-/* 9) Tiles (portfolio previews) */
+/* 8) Tiles */
 .tile {
   position: relative; overflow: hidden; border-radius: 16px;
   border: 1px solid var(--border); background: var(--surface);
@@ -221,58 +198,4 @@ a:hover { text-decoration: underline; }
 .tile .meta {
   position: absolute; inset: auto 12px 12px 12px; padding: 10px 12px;
   border-radius: 12px; background: rgba(0,0,0,0.38); color: #fff;
-  backdrop-filter: blur(8px); font-size: 14px;
-}
-:root.theme-light .tile .meta { background: rgba(255,255,255,0.7); color: #0b1220; }
-
-/* 10) Forms */
-.input, .textarea {
-  width: 100%; padding: 12px 14px; border-radius: 12px;
-  border: 1px solid var(--border); background: var(--surface); color: var(--text);
-  outline: none; transition: box-shadow .15s ease, border-color .15s ease;
-}
-.input:focus, .textarea:focus {
-  box-shadow: 0 0 0 4px var(--ring);
-  border-color: var(--cyan);
-}
-
-/* 11) Footer */
-.footer {
-  margin-top: 48px; padding: 24px; color: var(--muted);
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 12px;
-}
-
-/* 12) Motion & utilities */
-.reveal { opacity: 0; transform: translateY(14px); }
-.reveal.show { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
-
-.hover-float { transition: transform .2s ease; }
-.hover-float:hover { transform: translateY(-4px); }
-
-.badge {
-  display: inline-block; padding: 6px 10px; border-radius: 999px;
-  background: rgba(6,182,212,0.16); color: #a7f3d0; border: 1px solid var(--border);
-  font-size: 12px;
-}
-.hr { height: 1px; background: var(--border); margin: 16px 0; border: 0; }
-
-/* 13) Focus visible */
-:where(a, button, input, textarea, select):focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--ring);
-}
-
-/* 14) Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal.show, .hover-float, .theme-toggle .icon {
-    transition: none !important;
-    transform: none !important;
-  }
-  html { scroll-behavior: auto; }
-}
-
-/* 15) Helpers */
-.hidden { display: none !important; }
-.spacer { height: 24px; }
-.center { display: grid; place-items: center; }
+  backdrop-filter: blur(8px); font
