@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Add a class to the body after a short delay to trigger a smooth fade-in
+    // Add a class to the body after a short delay for smooth fade-in
     setTimeout(() => {
         document.body.style.opacity = '1';
         document.body.style.transition = 'opacity 1s ease-in-out';
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('#services h2, .service-item, #about h2, #about p').forEach(el => {
+    document.querySelectorAll('.glassmorphic, .glassmorphic-section, .glassmorphic-card').forEach(el => {
         el.classList.add('hidden');
         observer.observe(el);
     });
